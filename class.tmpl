@@ -25,7 +25,7 @@
 						data.augments
 						.sort()
 						.map(
-							function($) { return "<span class='classlink'>" + new Link().toSymbol($) + "</span>"; }
+							function($) { return "<span class=''>" + new Link().toSymbol($) + "</span>"; }
 						)
 						.join(", ")
 					+}</small>
@@ -42,7 +42,7 @@
 				{+resolveLinks(data.classDesc)+}
 				
 				<if test="!data.isBuiltin()">{# isn't defined in any file #}
-					<br /><i>Defined in: </i> <span class="classlink">{+new Link().toSrc(data.srcFile)+}</span>.
+					<br /><i>Defined in: </i> <span class="">{+new Link().toSrc(data.srcFile)+}</span>.
 				</if>
 			</p>
 
@@ -165,7 +165,7 @@
 						memberlist.map(function($) {if (contributers.indexOf($.memberOf) < 0) contributers.push($.memberOf)});
 						for (var i = 0, l = contributers.length; i < l; i++) {
 							output +=
-								"<dt>" + memberlist.name + " inherited from <span class='classlink'>"+new Link().toSymbol(contributers[i])+"</span>: </dt>"
+								"<dt>" + memberlist.name + " inherited from <span class=''>"+new Link().toSymbol(contributers[i])+"</span>: </dt>"
 								+
 								"<dd>" +
 								memberlist
@@ -257,7 +257,7 @@
 						<dl class="detailList">
 						<dt class="heading">Returns:</dt>
 						<for each="item" in="data.returns">
-								<dd>{+((item.type)?"<span class=\"light fixedFont classlink\">{"+(new Link().toSymbol(item.type))+"}</span> " : "")+}{+resolveLinks(item.desc)+}</dd>
+								<dd>{+((item.type)?"<span class=\"light fixedFont \">{"+(new Link().toSymbol(item.type))+"}</span> " : "")+}{+resolveLinks(item.desc)+}</dd>
 						</for>
 						</dl>
 					</if>
@@ -265,7 +265,7 @@
 						<dl class="detailList">
 						<dt class="heading">Requires:</dt>
 						<for each="item" in="data.requires">
-							<dd><span class='classlink'>{+ new Link().toSymbol(item) +}</span></dd>
+							<dd><span class=''>{+ new Link().toSymbol(item) +}</span></dd>
 						</for>
 						</dl>
 					</if>
@@ -273,7 +273,7 @@
 						<dl class="detailList">
 						<dt class="heading">See:</dt>
 						<for each="item" in="data.see">
-							<dd><span class='classlink'>{+ new Link().toSymbol(item) +}</span></dd>
+							<dd><span class=''>{+ new Link().toSymbol(item) +}</span></dd>
 						</for>
 						</dl>
 					</if>
@@ -297,7 +297,7 @@
 						if (member.isStatic) output += "&lt;static&gt; ";
 					!}
 					<span class='title'>					
-						<if test="member.type"><span class="light classlink">{{+new Link().toSymbol(member.type)+}}</span></if>
+						<if test="member.type"><span class="light ">{{+new Link().toSymbol(member.type)+}}</span></if>
 						<if test="member.isStatic && member.memberOf != '_global_'"><span class="light">{+member.memberOf+}.</span></if><b>{+member.name.replace(/\^\d+$/, '')+}</b><if test="memberlist.sign">{+makeSignature(member.params)+}</if>
 					</span>
 					
@@ -306,7 +306,7 @@
 						{+resolveLinks(member.desc)+}
 						<if test="member.srcFile != data.srcFile">
 							<br />
-							<i>Defined in: </i> <span class="classlink">{+new Link().toSrc(member.srcFile)+}</span>.
+							<i>Defined in: </i> <span class="">{+new Link().toSrc(member.srcFile)+}</span>.
 						</if>
 						<if test="member.author"><br /><i>Author: </i>{+member.author+}.</if>
 					</div>
@@ -323,7 +323,7 @@
 							<dt class="heading">Parameters:</dt>
 							<for each="item" in="member.params">
 								<dt>
-									{+((item.type)?"<span class=\"light fixedFont classlink\">{"+(new Link().toSymbol(item.type))+"}</span> " : "")+}<b>{+item.name+}</b>
+									{+((item.type)?"<span class=\"light fixedFont \">{"+(new Link().toSymbol(item.type))+"}</span> " : "")+}<b>{+item.name+}</b>
 									<if test="item.isOptional"><i>Optional<if test="item.defaultValue">, Default: {+item.defaultValue+}</if></i></if>
 								</dt>
 								<dd>{+resolveLinks(item.desc)+}</dd>
@@ -350,7 +350,7 @@
 							<dt class="heading">Throws:</dt>
 							<for each="item" in="member.exceptions">
 								<dt>
-									{+((item.type)?"<span class=\"light fixedFont classlink\">{"+(new Link().toSymbol(item.type))+"}</span> " : "")+} <b>{+item.name+}</b>
+									{+((item.type)?"<span class=\"light fixedFont \">{"+(new Link().toSymbol(item.type))+"}</span> " : "")+} <b>{+item.name+}</b>
 								</dt>
 								<dd>{+resolveLinks(item.desc)+}</dd>
 							</for>
@@ -368,7 +368,7 @@
 							<dl class="detailList">
 							<dt class="heading">Returns:</dt>
 							<for each="item" in="member.returns">
-								<dd>{+((item.type)?"<span class=\"light fixedFont classlink\">{"+(new Link().toSymbol(item.type))+"}</span> " : "")+}{+resolveLinks(item.desc)+}</dd>
+								<dd>{+((item.type)?"<span class=\"light fixedFont \">{"+(new Link().toSymbol(item.type))+"}</span> " : "")+}{+resolveLinks(item.desc)+}</dd>
 							</for>
 							</dl>
 						</if>

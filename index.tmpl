@@ -11,13 +11,13 @@
 				if (JSDOC.opt.D.project) {
 					output += JSDOC.opt.D.project;
 				} else {
-					output += "Project name";
+					output += "jsDoc";
 				}
 			!} Reference</title>
 
     <!-- Le styles -->
 	<style type="text/css">
-		{+include("css/bootstrap.css")+}
+		{+include("css/bootstrap.min.swatch.css")+}
 		body {
 			padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
 		}
@@ -64,7 +64,7 @@
 				if (JSDOC.opt.D.project) {
 					output += JSDOC.opt.D.project;
 				} else {
-					output += "Project name";
+					output += "jsDoc";
 				}
 			!}
 			  </a>
@@ -160,10 +160,11 @@
 			event.preventDefault();
 			$(this).popover("toggle");
 		});
-		$(".classlink a").live("click", function(event) {
-			event.preventDefault();
-			var classlink = $(this);
-			loadPage($(this).attr("href"));
+		$("a").live("click", function(event) {
+			if($(this).attr("href").indexOf("symbols") !== -1) {
+				event.preventDefault();
+				loadPage($(this).attr("href"));
+			}			
 		});
 
 		$(window).bind("hashchange", function() {
