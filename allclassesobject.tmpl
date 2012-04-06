@@ -1,0 +1,10 @@
+	{! 
+	   theseclasses = []; !}
+	<for each="thisClass" in="data">
+	{!		
+		theseclasses.push("\\\"" + thisClass.alias + "\\\"");
+	!}
+	</for>	
+	{! 
+		output = "[" + theseclasses.join(", ").replace(" ", "").replace("\n", "") + "]";
+	!}

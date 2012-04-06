@@ -1,0 +1,6 @@
+
+	<for each="thisClass" in="data">
+	{!		
+		output += "<li class='classlink'>" + new Link().toClass(thisClass.alias) + "</li>";
+	!}
+	</for>
