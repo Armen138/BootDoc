@@ -139,7 +139,7 @@
 									if (member.isPrivate) output += "&lt;private&gt; ";
 									if (member.isInner) output += "&lt;inner&gt; ";
 									if (member.isStatic) output += "&lt;static&gt; ";
-									if (member.type) output += "{" + member.type + "}";
+									if (member.type) output += "<i>{" + new Link().toSymbol(member.type) + "}</i>";
 								!}&nbsp;</td>
 								<td class="nameDescription">
 									<div class="fixedFont"><if test="member.isStatic && member.memberOf != '_global_'">{+member.memberOf+}.</if><b><a href="#{+ member.name.replace(/\^\d+$/, '') +}">{+ member.name.replace(/\^\d+$/, '') +}</a></b><if test="memberlist.sign">{+makeSignature(member.params)+}</if>
@@ -154,7 +154,7 @@
 			</for>
 		</div>
 		
-			<if test="data.inheritsFrom.length">				
+		<if test="data.inheritsFrom.length">				
 			<div class="span3">
 				<h3>&nbsp;</h3>
 				<for each="memberlist" in="allinherited">
@@ -184,8 +184,8 @@
 					</dl>			
 					</div>
 				</for>
-				</div>
-			</if>
+			</div>
+		</if>
 			
 			</div>
 <!-- ========================= constructor details ==================== -->		
