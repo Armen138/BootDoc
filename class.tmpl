@@ -257,7 +257,7 @@
 						<dl class="detailList">
 						<dt class="heading">Returns:</dt>
 						<for each="item" in="data.returns">
-								<dd>{+((item.type)?"<span class=\"light fixedFont\">{"+(new Link().toSymbol(item.type))+"}</span> " : "")+}{+resolveLinks(item.desc)+}</dd>
+								<dd>{+((item.type)?"<span class=\"light fixedFont classlink\">{"+(new Link().toSymbol(item.type))+"}</span> " : "")+}{+resolveLinks(item.desc)+}</dd>
 						</for>
 						</dl>
 					</if>
@@ -265,7 +265,7 @@
 						<dl class="detailList">
 						<dt class="heading">Requires:</dt>
 						<for each="item" in="data.requires">
-							<dd>{+ new Link().toSymbol(item) +}</dd>
+							<dd><span class='classlink'>{+ new Link().toSymbol(item) +}</span></dd>
 						</for>
 						</dl>
 					</if>
@@ -273,7 +273,7 @@
 						<dl class="detailList">
 						<dt class="heading">See:</dt>
 						<for each="item" in="data.see">
-							<dd>{+ new Link().toSymbol(item) +}</dd>
+							<dd><span class='classlink'>{+ new Link().toSymbol(item) +}</span></dd>
 						</for>
 						</dl>
 					</if>
