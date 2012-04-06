@@ -306,7 +306,7 @@
 						{+resolveLinks(member.desc)+}
 						<if test="member.srcFile != data.srcFile">
 							<br />
-							<i>Defined in: </i> {+new Link().toSrc(member.srcFile)+}.
+							<i>Defined in: </i> <span class="classlink">{+new Link().toSrc(member.srcFile)+}</span>.
 						</if>
 						<if test="member.author"><br /><i>Author: </i>{+member.author+}.</if>
 					</div>
