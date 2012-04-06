@@ -7,7 +7,13 @@
     <meta name="author" content="">
 	<meta http-equiv="content-type" content="text/html; charset={+IO.encoding+}" />
 	<meta name="generator" content="JsDoc Toolkit" />		
-	<title>JsDoc Reference - Index</title>
+	<title>{! 
+				if (JSDOC.opt.D.project) {
+					output += JSDOC.opt.D.project;
+				} else {
+					output += "Project name";
+				}
+			!} Reference</title>
 
     <!-- Le styles -->
 	<style type="text/css">

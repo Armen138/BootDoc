@@ -121,7 +121,7 @@ function publish(symbolSet) {
 
 
 	// output the file index page
-	//var filesIndex = publish.filesIndex;//fileindexTemplate.process(allFiles);	
+	//ar filesIndex = publish.filesIndex;//fileindexTemplate.process(allFiles);	
 	//IO.saveFile(publish.conf.outDir, "files"+publish.conf.ext, filesIndex);
 	fileindexTemplate = filesIndex = files = null;
 }
