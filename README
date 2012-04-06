@@ -1,0 +1,9 @@
+BootDoc is a template to use with jsdoc-toolkit to generate pretty documentation for Javascript code.
+
+BootDoc uses:
+
+Twitter's Bootstrap: http://twitter.github.com/bootstrap/
+Rainbow (for highlighting syntax in examples): http://craig.is/making/rainbows
+
+And requires: 
+jsdoc-toolkit: http://code.google.com/p/jsdoc-toolkit/
